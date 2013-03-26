@@ -1,0 +1,83 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>ArcConsole</title>
+        <meta name="description" content="ArcConsole is a simplified, intiutive client-side API console for the ArcGIS
+        Server REST API.">
+        <link rel="stylesheet" href="styles/default.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.5/leaflet.css">
+        <link rel="stylesheet" href="styles/leaflet.draw.css">
+        <link rel="stylesheet" href="styles/chosen.css">
+        <link rel="stylesheet" href="styles/main.css">
+    </head>
+    
+    <script type="text/template" id="endpoint-select-template">
+        <h3>Show me...</h3>
+        <select name="endpoint" id="endpoint-selector" class="endpoints chzn-select">
+            <% for(var endpoint in endpoints) { %>
+                <option value="<%= endpoints[endpoint].name %>"><%= endpoints[endpoint].name %></option>
+            <% } %>
+        </select>
+    </script>
+
+    <script type="text/template" id="query-template">
+        <%= base %><%= service %>/MapServer/<%= layer %>/query?where=<%= where %>&inSR=<%= inSR %>&geometry=<%= geometry
+        %>&geometryType=<%= geometryType %>&spatialRel=<%= spatialRel %>&outSR=<%= outSR %>&returnCountOnly=<%=
+        returnCountOnly %>&returnIdsOnly=<%= returnIdsOnly %>&returnGeometry=<%= returnGeometry %>&outFields=<%=
+        returnFields %><br />
+        <h6>For advanced queries, try the official ArcGIS console: <a target="_new" href="<%= base %><%= service %>/MapServer/<%= layer %>/query">
+        <%= base %><%= service %>/MapServer/<%= layer %>/query</a></h6>
+    </script>
+
+    <script type="text/template" id="description-template">
+        <%= service.description %><br />
+        <% if (service.metadata) { %>
+            <a href="<%- service.metadata %>" target="_new">Metadata</a>
+        <% } %>
+    </script>
+
+    <body>
+        <div class="loader">
+            <span class="icon"></span>
+        </div>
+        <div class="container">
+            <div class="endpoints-container" align="center"></div>
+            <div class="query well hidden description" align="center"></div>
+            <div class="form"></div>
+            <button class="btn btn-submit hidden">Submit</button><br />
+            <div id="query-container" class="hidden">
+                <h1>Query</h1>
+                <div class="query well"></div>
+            </div>
+            <div id="results-container" class="hidden">
+                <h1>Results</h1>
+                <div class="query-results well"></div>
+            </div>
+        </div>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+            <![endif]-->
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/0.9.10/backbone-min.js"></script>
+        <script src="scripts/backbone-forms.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/chosen/0.9.12/chosen.jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.5/leaflet.js"></script>
+        <script src="scripts/leaflet.draw.js"></script>
+        <script src="scripts/bootstrap-alert.js"></script>
+        <script src="scripts/main.js"></script>
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+{
+	"services": [
+		{
+			"name": "Crime Incidents (Part I)",
+			"path": "PhilaGov/Police_Incidents",
+			"layer": 0,
+			"description": "Philadelphia Part I crimes since 1/1/06. Updated daily from the Police Dept.",
+			"metadata": "http://gis.phila.gov/data/Police_Crime_Incident_metadata.docx"
+		},
+		{
+			"name": "Crime Incidents (Part I) Last 30 Days",
+			"path": "PhilaGov/Police_Incidents_Last30",
+			"layer": 0,
+			"description": "Crime Incidents Part I over the last 30 Days. Updated daily from the Police Dept.",
+			"metadata": "http://gis.phila.gov/data/Police_Crime_Incident_metadata.docx"
+		},
+		{
+			"name": "OPA AVI 2013-14",
+			"path": "OPA/AVI_2013_2014_ADDL",
+			"layer": 0,
+			"description": "Philadelphia Property Accessments for 2013 and 2014",
+			"metadata": "http://opendataphilly.org/opendata/resource/225/opa-property-assessments/"
+        },
+        {
+            "name": "Farmer's Markets",
+            "path": "PhilaGov/Farmers_Markets",
+            "layer": 0,
+            "description": "Philadelphia farmer's market locations",
+            "metadata": ""
+        },
+        {   "name": "Fire Stations",
+            "path": "PhilaGov/Fire_Stations",
+            "layer": 0,
+            "description": "Philadelphia fire stations",
+            "metadata": ""
+        },
+        {   "name": "Golf Courses",
+            "path": "PhilaGov/Golf_Courses",
+            "layer": 0,
+            "description": "Golf courses throughout Philadelphia",
+            "metadata": ""
+        },
+        {   "name": "Healthy Corner Stores",
+            "path": "PhilaGov/Healthy_Corner_Stores",
+            "layer": 0,
+            "description": "Healthy corner stores and enhanced corner stores throughout Philadelphia",
+            "metadata": ""
+        },
+        {
+            "name": "Hospitals",
+            "path": "PhilaGov/Hospitals",
+            "layer": 0,
+            "description": "Philadelphia hospitals",
+            "metadata": ""
+        },
+        {
+            "name": "Ice Rinks",
+            "path": "PhilaGov/Ice_Rinks",
+            "layer": 0,
+            "description": "Philadelphia ice rinks",
+            "metadata": ""
+        },
+        {
+            "name": "PAC Complaints 2009-2012",
+            "path": "PhilaGov/PAC_Complaints_2009_2012",
+            "layer": 0,
+            "description": "Complaints registered against police officers to the Police Advisory Commission from 2009 to 2012",
+            "metadata": ""
+        },
+        {
+            "name": "PAL Centers",
+            "path": "PhilaGov/PAL_Centers",
+            "layer": 0,
+            "description": "Police Activity League centers in Philadelphia",
+            "metadata": ""
+        },
+        {
+            "name": "Parks",
+            "path": "PhilaGov/Parks",
+            "layer": 0,
+            "description": "Philadelphia parks",
+            "metadata": ""
+        },
+        {
+            "name": "Playgrounds",
+            "path": "PhilaGov/Playgrounds",
+            "layer": 0,
+            "description": "Philadelphia playgrounds",
+            "metadata": ""
+        },
+        {
+            "name": "Local RCOs",
+            "path": "PhilaGov/RCO",
+            "layer": 0,
+            "description": "Local registered community organizations within the city",
+            "metadata": ""
+        },
+        {
+            "name": "Issue-Based RCOs",
+            "path": "PhilaGov/RCO",
+            "layer": 1,
+            "description": "Issue-Based registered community organizations within the city",
+            "metadata": ""
+        },
+        {
+            "name": "Recreation Facilities",
+            "path": "PhilaGov/Recreation_Facilities",
+            "layer": 0,
+            "description": "Philadelphia recreation facilities",
+            "metadata": ""
+        },
+        {
+            "name": "School Catchment Areas (Elementary School)",
+            "path": "PhilaGov/ServiceAreas",
+            "layer": 16,
+            "description": "Philadelphia elementary school catchment areas",
+            "metadata": ""
+        },
+        {
+            "name": "School Catchment Areas (Middle School)",
+            "path": "PhilaGov/ServiceAreas",
+            "layer": 17,
+            "description": "Philadelphia middle school catchment areas",
+            "metadata": ""
+        },
+        {
+            "name": "School Catchment Areas (High School)",
+            "path": "PhilaGov/ServiceAreas",
+            "layer": 18,
+            "description": "Philadelphia high school catchment areas",
+            "metadata": ""
+        },
+        {
+            "name": "Complete Street Types",
+            "path": "PhilaGov/Street_Spec",
+            "layer": 0,
+            "description": "The Complete Streets Types layer allows developers, planners, engineers and community groups to easily identify the pedestrian, bicycle and other travel priorities to be included during the planning of new streets or large developments",
+            "metadata": "http://www.arcgis.com/home/item.html?id=67bfa2ba676e4283a528c587d08377f7"
+        },
+        {
+            "name": "Green Storm Water Projects",
+            "path": "PhilaGov/Green_Storm_Water_Projects",
+            "layer": 0,
+            "description": "This feature class represents Green Stormwater Infrastructure (GSI) locations that are currently in the design phase or have been constructed",
+            "metadata": "http://www.arcgis.com/home/item.html?id=b8f4e8ff30b640eeab68cb69f11ea8e2"
+        },
+        {
+            "name": "Zip Codes",
+            "path": "PhilaGov/ServiceAreas",
+            "layer": 22,
+            "description": "Philadelphia zip codes as accurate as possible to the U.S. Postal Service's dataset",
+            "metadata": ""
+        },
+        {
+            "name": "Police Service Areas",
+            "path": "PhilaGov/ServiceAreas",
+            "layer": 9,
+            "description": "Philadelphia police service areas",
+            "metadata": ""
+        },
+        {
+            "name": "Council Districts",
+            "path": "PhilaGov/ServiceAreas",
+            "layer": 2,
+            "description": "Current Philadelphia council districts approved in 2000",
+            "metadata": ""
+        },
+        {
+            "name": "Trash Days",
+            "path": "PhilaGov/ServiceAreas",
+            "layer": 12,
+            "description": "Trash day boundaries",
+            "metadata": ""
+        },
+        {
+            "name": "Philly Rising Boundaries",
+            "path": "PhilaGov/ServiceAreas",
+            "layer": 15,
+            "description": "Philly Rising boundaries",
+            "metadata": ""
+        },
+        {
+            "name": "Police Districts",
+            "path": "PhilaGov/ServiceAreas",
+            "layer": 7,
+            "description": "Philadelphia Police Department district boundaries",
+            "metadata": ""
+        },
+        {
+            "name": "Census Tracts 2010",
+            "path": "PhilaGov/ServiceAreas",
+            "layer": 0,
+            "description": "2010 Philadelphia census tracts from the U.S. Census Bureau",
+            "metadata": ""
+        },
+        {
+            "name": "Census Block Groups 2010",
+            "path": "PhilaGov/ServiceAreas",
+            "layer": 1,
+            "description": "2010 Philadelphia census block groups from the U.S. Census Bureau",
+            "metadata": ""
+        },
+        {
+            "name": "Political Wards",
+            "path": "PhilaGov/ServiceAreas",
+            "layer": 10,
+            "description": "Philadelphia political ward boundaries",
+            "metadata": ""
+        }
+    ]
+}
+
