@@ -6948,3 +6948,9 @@ input[type=radio], input.radio {
 #c1_returnFields {
   width: 450px;
 }
+
+/* line 129, ../../app/styles/main.scss */
+.alert-error {
+  width: 750px;
+  margin-bottom: 5px;
+}

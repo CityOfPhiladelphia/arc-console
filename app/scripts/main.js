@@ -7,7 +7,8 @@ var app = app || {
     drawnItems: new L.featureGroup(),
     request: {},
     form: {},
-    map: {}
+    map: {},
+    validators: {}
 };
 
 // $CONFIG
@@ -45,6 +46,41 @@ app.templates = {
 
 Backbone.Form.setTemplates(app.templates);
 
+// FORM INPUT VALIDATORS
+app.validators.noReturnFields = function(values, formValues) {
+    var error = {
+        type: 'No Return Fields Selected',
+        message: 'You must select at least one field to be returned'
+    };
+
+    if (!formValues.returnFields) return error;
+};
+
+app.validators.allFieldsAndMore = function(values, formValues) {
+    var error = {
+        type: 'All fields and more selected',
+        message: 'If you select "All Fields," don\'t select any other fields'
+    };
+
+    if (values.length > 1) {
+        for (var i=0; i < values.length; i++) {
+            if ($.inArray(values[i], ['*']) > -1) {
+                return error;
+            }
+        }
+    }
+};
+
+app.validators.noWhereOrGeometry = function(values, formValues) {
+    var error = {
+        type: 'No where or geometry entered',
+        message: 'You must input a where clause and/or a geometry to query the API on'
+    }
+    if (!formValues.geometry && !formValues.where) {
+        return error;
+    }
+}
+
 // MODELS
 // The user's form data is stored here
 app.Models.Request = Backbone.Model.extend({
@@ -68,7 +104,8 @@ app.Models.Request = Backbone.Model.extend({
         where: {
             type: 'Text', 
             help: 'Standard SQL queries work here. Input a true statement like "1=1" to get all features',
-            template: 'whereField'
+            template: 'whereField',
+            validators: [app.validators.noWhereOrGeometry]
         },
         geometryType: {
             type: 'Select', 
@@ -112,7 +149,8 @@ app.Models.Request = Backbone.Model.extend({
                 multiple: true,
                 'data-placeholder': 'Select your return fields'
             },
-            template: 'returnFieldsField'
+            template: 'returnFieldsField',
+            validators: [app.validators.noReturnFields, app.validators.allFieldsAndMore]
         },
         countsOnly: { 
             type: 'Radio', 
@@ -313,7 +351,22 @@ app.Views.App = Backbone.View.extend({
     },
 
     submitForm: function () {
-        app.request.fetch();
+        $('.error-container').empty();
+        // Validate the form for missing or invalid entries
+        var errors = app.form.commit();
+        if (errors) {
+            this.showErrors(errors);
+        } else {
+            app.request.fetch();
+        }
+    },
+
+    showErrors: function(errors) {
+        for (var prop in errors) {
+            var data = errors[prop];
+            var template = _.template($('#validation-error-template').html(), errors[prop]);
+            $('.error-container').append(template);
+        }
     }
 });
 

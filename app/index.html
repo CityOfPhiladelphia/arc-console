@@ -41,6 +41,10 @@
         <% } %>
     </script>
 
+    <script type="text/template" id="validation-error-template">
+        <div class="alert alert-error"><button type="button" class="close" data-dismiss="alert">&times;</button><strong><%= message %></strong></div>
+    </script>
+
     <body>
         <div class="loader">
             <span class="icon"></span>
@@ -54,6 +58,7 @@
                 <h1>Query</h1>
                 <div class="query well"></div>
             </div>
+            <div class="error-container" class="hidden"></div>
             <div id="results-container" class="hidden">
                 <h1>Results</h1>
                 <div class="query-results well"></div>
