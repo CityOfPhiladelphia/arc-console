@@ -1,6 +1,6 @@
 {
   "name": "arc-console",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "sass-bootstrap": "~2.3.0",
     "jquery": "~1.9.1",
