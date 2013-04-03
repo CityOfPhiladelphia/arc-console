@@ -182,6 +182,7 @@ app.Models.Request = Backbone.Model.extend({
             returnGeometryOnly: this.get("returnGeometry"),
             returnIdsOnly: this.get("idsOnly"),
             returnCountOnly: this.get("countsOnly"),
+            spatialRel: this.get("spatialRelationship"),
             f: 'json'
         };
         options.url = app.config.serviceBase + this.get("endpoint") + '/MapServer/' + this.get("layer") + '/query?';
