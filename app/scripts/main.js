@@ -277,8 +277,12 @@ app.Views.Services = Backbone.View.extend({
     },
 
     render: function () {
-        var endpoints = { endpoints: this.collection.toJSON() };
-        var template = _.template($('#endpoint-select-template').html(), endpoints);
+        var services = {};
+        services.endpoints = [];
+        var endpoints = this.collection.toJSON();
+        endpoints.unshift({name: 'Select a service....'});
+        services.endpoints = endpoints;
+        var template = _.template($('#endpoint-select-template').html(), services);
         $(this.el).html(template);
         $('.chzn-select').chosen();
     }
