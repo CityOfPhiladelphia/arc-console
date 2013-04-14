@@ -554,7 +554,7 @@ app.Views.Fields = Backbone.View.extend({
     render: function() {
         var fields = [];
         
-        var allFieldsOption = {val: '*', label: 'ALL FIELDS'};
+        var allFieldsOption = {val: '*', label: 'RETURN ALL FIELDS'};
         fields.push(allFieldsOption);
         
         // Exclude Esri shapefile fields that users don't ever need
