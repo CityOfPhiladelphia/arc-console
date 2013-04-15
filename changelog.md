@@ -1,3 +1,7 @@
+0.2.2 Option Improvements (4/14/13) [dw]
+* Changed "ALL FIELDS" to "RETURN ALL FIELDS" label in return fields option 
+* Set "Select a service..." as the first option in the initial service option
+
 0.2.1 Spatial Relationship Bug (4/3/13) [dw]
 * Spatial relationship wasn't being passed in the API request even though it 
 was in the query displayed. 
