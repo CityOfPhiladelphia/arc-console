@@ -534,7 +534,7 @@ app.Views.Fields = Backbone.View.extend({
     initialize: function () {
         _.bindAll(this, 'render', 'setEndpoint');
         this.collection.on('reset', this.render, this);
-        app.request.on('change:endpoint', this.setEndpoint);
+        app.request.on('change:layer change:endpoint', this.setEndpoint);
     },
 
     render: function() {
