@@ -6,7 +6,7 @@ ArcGIS REST API or users that want to get their data quickly and move on with th
 decisions for you, like for instance since you're on the internet the spatial reference you're using is probably
 WGS 84 (4326). It also uses JavaScript libraries like [Chosen] (http://harvesthq.github.com/chosen) and [Leaflet Draw] (https://github.com/Leaflet/Leaflet.draw) to help you construct your query parameters how you need them.  
 
-[(Demo)] (http://arc-console.s3-website-us-east-1.amazonaws.com)
+[(Demo)] (http://cityofphiladelphia.github.io/arc-console)
 
 It is still a work in progress and we would love to here from developers and other users on how this application can be
 improved. Feel free to open issues for requested features/bugs.
