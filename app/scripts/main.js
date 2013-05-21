@@ -104,8 +104,8 @@ app.Models.Request = Backbone.Model.extend({
         where: {
             type: 'Text', 
             help: 'Standard SQL queries work here. Input a true statement like "1=1" to get all features',
-            template: 'whereField',
-            validators: [app.validators.noWhereOrGeometry]
+            template: 'whereField'
+            //validators: [app.validators.noWhereOrGeometry]
         },
         geometryType: {
             type: 'Select', 
@@ -149,8 +149,8 @@ app.Models.Request = Backbone.Model.extend({
                 multiple: true,
                 'data-placeholder': 'Select your return fields'
             },
-            template: 'returnFieldsField',
-            validators: [app.validators.noReturnFields, app.validators.allFieldsAndMore]
+            template: 'returnFieldsField'
+            //validators: [app.validators.noReturnFields, app.validators.allFieldsAndMore]
         },
         countsOnly: { 
             type: 'Radio', 
@@ -356,22 +356,7 @@ app.Views.App = Backbone.View.extend({
     },
 
     submitForm: function () {
-        $('.error-container').empty();
-        // Validate the form for missing or invalid entries
-        var errors = app.form.commit();
-        if (errors) {
-            this.showErrors(errors);
-        } else {
-            app.request.fetch();
-        }
-    },
-
-    showErrors: function(errors) {
-        for (var prop in errors) {
-            var data = errors[prop];
-            var template = _.template($('#validation-error-template').html(), errors[prop]);
-            $('.error-container').append(template);
-        }
+        app.request.fetch();
     }
 });
 
