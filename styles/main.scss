@@ -1,0 +1,128 @@
+@import "../components/sass-bootstrap/lib/bootstrap.scss";
+.container {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+.form {
+    margin: auto 0;
+    width: 1000px;
+}
+
+.bbf-field {
+    list-style-type: none;
+    margin-top: 8px;
+}
+
+.bbf-radio {
+    list-style-type: none;
+}
+
+.query-results {
+    white-space: pre;
+}
+
+.endpoints-container {
+    margin: auto 0;
+}
+
+.textbox {
+    height: 120px;
+    width: 500px;
+}
+
+#map {
+    height: 350px;
+    width: 745px;
+}
+
+label { 
+    display:block; 
+    padding: 2px 1em 0 0; 
+}
+input[type=radio], input.radio { 
+    float:left; 
+    margin: 2px 0 0 2px; 
+}
+
+.bbf-help {
+    color: #3B5323;
+}
+
+.query-url {
+    max-width: 760px;
+    word-wrap: break-word;
+}
+
+.query-results {
+    word-wrap: break-word;
+}
+
+.alert {
+    width: 695px;
+}
+
+.well {
+    margin-bottom: 5px;
+}
+
+#c1_geometry {
+    margin-top: 15px;
+    width: 730px;
+}
+
+#c1_where {
+    width: 450px;
+}
+
+.description {
+    margin-top: 20px;
+}
+
+.geometry-alert {
+    margin-top: 12px;
+}
+
+.loader .icon {
+    background-color: black;
+    background: url(ajax-loader.gif);
+    display: block;
+    margin: 0 auto;
+    width: 44px;
+    height: 44px;
+    padding: 1px;
+    -webkit-border-radius: 36px;
+    border-radius: 36px;
+    moz-border-radius: 36px;
+}
+
+.loading .loader { display: block; }
+.loader {
+    display: none;
+    z-index: 9999999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    border:0;
+    background: none;
+    filter: Alpha(Opacity=18);
+    opacity: .18;
+    width: 46px;
+    height: 46px;
+    margin-left: -23px;
+    margin-top: -23px;
+}
+
+.leaflet-control-draw {
+    display: none;
+}
+
+#c1_returnFields {
+    width: 450px;
+}
+
+.alert-error {
+    width: 750px;
+    margin-bottom: 5px;
+}
