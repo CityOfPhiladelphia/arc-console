@@ -1,5 +1,12 @@
 {
 	"services": [
+        {
+            "name": "Polling Place Locations (May 2013)",
+            "path": "PhilaGov/Polling_Places_May13",
+            "layer": 2,
+            "description": "Polling place locations for the May 21st, 2013 municipal primary election",
+            "metadata": ""
+        },
 		{
 			"name": "Crime Incidents (Part I)",
 			"path": "PhilaGov/Police_Incidents",
