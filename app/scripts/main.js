@@ -142,7 +142,7 @@ app.Models.Request = Backbone.Model.extend({
         },
         returnFields: { 
             type: 'Select',
-            options: ['Select service again'],
+            options: ['Select a service'],
             editorClass: 'chzn-select', 
             editorAttrs: {
                 multiple: true,
