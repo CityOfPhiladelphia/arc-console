@@ -7,8 +7,7 @@ var app = app || {
     drawnItems: new L.featureGroup(),
     request: {},
     form: {},
-    map: {},
-    validators: {}
+    map: {}
 };
 
 // $CONFIG
@@ -45,41 +44,6 @@ app.templates = {
 }
 
 Backbone.Form.setTemplates(app.templates);
-
-// FORM INPUT VALIDATORS
-app.validators.noReturnFields = function(values, formValues) {
-    var error = {
-        type: 'No Return Fields Selected',
-        message: 'You must select at least one field to be returned'
-    };
-
-    if (!formValues.returnFields) return error;
-};
-
-app.validators.allFieldsAndMore = function(values, formValues) {
-    var error = {
-        type: 'All fields and more selected',
-        message: 'If you select "All Fields," don\'t select any other fields'
-    };
-
-    if (values.length > 1) {
-        for (var i=0; i < values.length; i++) {
-            if ($.inArray(values[i], ['*']) > -1) {
-                return error;
-            }
-        }
-    }
-};
-
-app.validators.noWhereOrGeometry = function(values, formValues) {
-    var error = {
-        type: 'No where or geometry entered',
-        message: 'You must input a where clause and/or a geometry to query the API on'
-    }
-    if (!formValues.geometry && !formValues.where) {
-        return error;
-    }
-}
 
 // MODELS
 // The user's form data is stored here
