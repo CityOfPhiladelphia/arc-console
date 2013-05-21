@@ -294,7 +294,6 @@ app.Views.App = Backbone.View.extend({
 
     initialize: function () {
         // Build the form on the first select of a service
-        app.request.once('change:endpoint', this.setupForm);
         // Loading gif
         app.request.on('request', function () {
             $('.loader').show();
@@ -322,35 +321,6 @@ app.Views.App = Backbone.View.extend({
                 app.drawControl.handlers.polyline.enable();
             }
         }
-    },
-
-    setupForm: function (e) {
-        app.form = new Backbone.Form({
-            model: app.request
-        }).render();
-
-        // Add the form to the page
-        $('.form').append(app.form.el);
-    
-        // On form change, commit to the request model
-        $('.form').change(function() {
-            app.form.commit();
-        });
-
-        $('.hidden').show();
-        app.descriptionView = new app.Views.Description({model: app.request});
-        $('.description').append(app.descriptionView.el);
-
-        app.queryView = new app.Views.Query({model: app.request});
-        // Add it to the page
-        $('.query').append(app.queryView.el);
-
-        app.resultView = new app.Views.Results({model: app.request});
-    
-        app.fieldsCollection = new app.Collections.Fields();
-        app.fieldsView = new app.Views.Fields({collection: app.fieldsCollection});
-        app.mapView = new app.Views.Map();
-        $('.chzn-select').chosen();
     },
 
     submitForm: function () {
@@ -577,10 +547,30 @@ $(function () {
     
     // Set up the endpoints drop-down
     app.servicesView = new app.Views.Services({collection: app.services});
-    
     // Add the endpoint drop-down view to the page
     $('.endpoints-container').append(app.servicesView.el);
 
-    // Enable Chosen select menus
-    // $('.chzn-select').chosen();
+    app.form = new Backbone.Form({
+        model: app.request
+    }).render();
+    // Add the form to the page
+    $('.form').append(app.form.el);
+    // On form change, commit to the request model
+    $('.form').change(function() {
+        app.form.commit();
+    });
+
+    app.descriptionView = new app.Views.Description({model: app.request});
+    $('.description').append(app.descriptionView.el);
+
+    app.queryView = new app.Views.Query({model: app.request});
+    // Add it to the page
+    $('.query').append(app.queryView.el);
+
+    app.resultView = new app.Views.Results({model: app.request});
+    
+    app.fieldsCollection = new app.Collections.Fields();
+    app.fieldsView = new app.Views.Fields({collection: app.fieldsCollection});
+    app.mapView = new app.Views.Map();
+    $('.chzn-select').chosen();
 });
