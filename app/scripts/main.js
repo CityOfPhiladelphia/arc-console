@@ -105,7 +105,6 @@ app.Models.Request = Backbone.Model.extend({
             type: 'Text', 
             help: 'Standard SQL queries work here. Input a true statement like "1=1" to get all features',
             template: 'whereField'
-            //validators: [app.validators.noWhereOrGeometry]
         },
         geometryType: {
             type: 'Select', 
@@ -150,7 +149,6 @@ app.Models.Request = Backbone.Model.extend({
                 'data-placeholder': 'Select your return fields'
             },
             template: 'returnFieldsField'
-            //validators: [app.validators.noReturnFields, app.validators.allFieldsAndMore]
         },
         countsOnly: { 
             type: 'Radio', 
@@ -537,7 +535,6 @@ app.Views.Fields = Backbone.View.extend({
         _.bindAll(this, 'render', 'setEndpoint');
         this.collection.on('reset', this.render, this);
         app.request.on('change:endpoint', this.setEndpoint);
-        this.setEndpoint();
     },
 
     render: function() {
