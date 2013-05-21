@@ -18,7 +18,7 @@ app.config.excludedFields = ['OBJECTID', 'SHAPE', 'SHAPE.LEN', 'SHAPE.AREA', 'OB
 // The basemap for drawing the geometry
 app.config.basemap = new L.TileLayer('http://services.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}.png');
 // The JSON file with services info
-app.config.servicesFile = '../services.json';
+app.config.servicesFile = './services.json';
 // The max bounds of the geometry map so that users don't drag too far away
 app.config.maxBounds = new L.LatLngBounds([39.849719,-75.308533], [40.123346,-74.904785]);
 // The center of the geometry map
